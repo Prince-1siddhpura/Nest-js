@@ -6,10 +6,7 @@ export class UserController {
   constructor(private userService: UserService) {}
   @Get()
   getUsers() {
-    return {
-      status: true,
-      message: 'This action returns all users',
-    };
+    return this.userService.getUsers();
   }
   @Get('profile')
   getProfile() {
@@ -18,4 +15,9 @@ export class UserController {
       message: 'This action returns the profile of a user',
     };
   }
+  @Get('count')
+  getUserCount(){
+    return this.userService.getUserCount();
+  }
+
 }
